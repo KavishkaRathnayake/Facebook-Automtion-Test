@@ -6,6 +6,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 public class HomePageTest {
     WebDriver driver;
 
@@ -41,7 +43,12 @@ public class HomePageTest {
         String Textbox2 = passwordField.getAttribute("aria-label");
         System.out.println("Text on the Textbox 02: " + Textbox2);
 
+        //verify textbox is enabled
+        boolean enabled = TxtField.isEnabled();
+        System.out.println("Is textbox enabled: " + enabled);
 
+        boolean enabledpassword = TxtField.isEnabled();
+        System.out.println("Is textbox enabled: " + enabledpassword);
 
         //Loggin Button
         WebElement LogginButton = driver.findElement(By.name("login"));
@@ -77,7 +84,6 @@ public class HomePageTest {
         WebElement bottomtext = driver.findElement(By.xpath("//div[@id='reg_pages_msg']"));
         String textbottomthepage = bottomtext.getText();
         System.out.println("Text bottom of the page is: " + textbottomthepage);
-
 
     driver.quit();
     }
