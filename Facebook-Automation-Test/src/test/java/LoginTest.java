@@ -79,9 +79,11 @@ public class LoginTest {
 
 
     }
-    public void IncorrectCredentials(){
-        WebElement IncorrectCredentials =  driver.findElement(By.xpath("(//div[@class='_9ay7'])[1]"));
-        String Incorrectemail = IncorrectCredentials.getText();
-        System.out.println("It Says: " + Incorrectemail);
+    public void IncorrectCredentials() {
+        WebElement IncorrectCredentials = driver.findElement(By.xpath("(//div[@class='_9ay7'])[1]"));
+        String IncorrectPassword = IncorrectCredentials.getText();
+        System.out.println("It Says: " + IncorrectPassword);
     }
+
+
 }
