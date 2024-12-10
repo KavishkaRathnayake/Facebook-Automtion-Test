@@ -48,6 +48,53 @@ public class LoginTest {
 
         WebElement LoginButton = driver.findElement(By.xpath("(//button[normalize-space()='Log in'])[1]"));
         LoginButton.click();
+
+        //invalidCredentials();
+
+
     }
+
+    @Test
+    public void TC_FB_Login_03(){
+//        Enter a invalid username & valid password
+
+        WebElement username = driver.findElement(By.id("email"));
+        username.sendKeys("aaabbb@gmail.com");
+
+        WebElement Password = driver.findElement(By.id("pass"));
+        Password.sendKeys("Celkon");
+
+        WebElement LoginButton = driver.findElement(By.xpath("(//button[normalize-space()='Log in'])[1]"));
+        LoginButton.click();
+
+        //invalidCredentials();
+
+
+    }
+
+    @Test
+    public void TC_FB_Login_04(){
+    //        Enter a invalid username & invalid password
+
+    WebElement username = driver.findElement(By.id("email"));
+        username.sendKeys("aaabbb@gmail.com");
+
+    WebElement Password = driver.findElement(By.id("pass"));
+        Password.sendKeys("xxxx");
+
+    WebElement LoginButton = driver.findElement(By.xpath("(//button[normalize-space()='Log in'])[1]"));
+        LoginButton.click();
+
+       // invalidCredentials();
+
+
+}
+//Error message when entering wrong credentials. (But that error message is Showing sometimes only )
+public void invalidCredentials(){
+    WebElement invalidCredentials = driver.findElement(By.xpath("(//div[@class='_9ay7'])[1]"));
+    String errormessage = invalidCredentials.getText();
+    System.out.println("Showing an error as: " + errormessage);
+}
+
 }
 
