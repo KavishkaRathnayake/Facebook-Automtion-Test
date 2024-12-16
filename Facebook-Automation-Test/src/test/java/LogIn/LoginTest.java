@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -14,7 +15,9 @@ public class LoginTest {
 
     @BeforeMethod
     public void openLoginTest() {
-        driver = new ChromeDriver();
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.setBrowserVersion("121");
+        driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         driver.get("https://www.facebook.com/");
@@ -98,8 +101,17 @@ public class LoginTest {
 
         invalidCredentials2();
 
-        driver.quit();
+    }
 
+    @Test
+    public void TC_FB_Login_05(){
+        //     Don't Enter a username & password
+        WebElement LoginButton = driver.findElement(By.xpath("(//button[normalize-space()='Log in'])[1]"));
+        LoginButton.click();
+
+        invalidCredentials2();
+
+        driver.quit();
 
     }
 
@@ -117,5 +129,7 @@ public class LoginTest {
         System.out.println("Showing an error as: " + errormessage);
 
     }
+
+
 }
 
