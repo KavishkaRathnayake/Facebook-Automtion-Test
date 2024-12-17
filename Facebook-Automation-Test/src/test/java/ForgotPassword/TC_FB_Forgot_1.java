@@ -47,7 +47,8 @@ public class TC_FB_Forgot_1 {
         WebElement ContinueButton = driver.findElement(By.xpath("//button[normalize-space()='Continue']"));
         ContinueButton.click();
 
-        driver.quit();
+        driver.close();
+
 
 
 
