@@ -36,12 +36,12 @@ public class LoginTest {
         WebElement LoginButton = driver.findElement(By.xpath("(//button[normalize-space()='Log in'])[1]"));
         LoginButton.click();
 
-//            //Sometimes while Anonymous Login it is requiring the password again, for that;
-//        WebElement AnonymousLoginPassword = driver.findElement(By.id("pass"));
-//        AnonymousLoginPassword.sendKeys("Celkon");
-//
-//        WebElement AnonymousLoginButton = driver.findElement(By.xpath("(//button[normalize-space()='Log in'])[1]"));
-//        AnonymousLoginButton.click();
+            //Sometimes while Anonymous Login it is requiring the password again, for that;
+        WebElement AnonymousLoginPassword = driver.findElement(By.id("pass"));
+        AnonymousLoginPassword.sendKeys("Celkon");
+
+        WebElement AnonymousLoginButton = driver.findElement(By.xpath("(//button[normalize-space()='Log in'])[1]"));
+        AnonymousLoginButton.click();
 
 
     }
