@@ -50,6 +50,7 @@ public class TC_FB_post_1 {
 
         Thread.sleep(2000);
 
+        //Location
         WebElement Location = driver.findElement(By.xpath("//div[@aria-label='Check in']//div//div//img[@class='x1b0d499 xl1xv1r']"));
         Location.click();
         WebElement SelectLocation = driver.findElement(By.xpath("//input[@placeholder='Where are you?']"));
@@ -58,6 +59,7 @@ public class TC_FB_post_1 {
         driver.findElement(By.xpath("//li[@id='108602292505393']//div[@class='x9f619 x1n2onr6 x1ja2u2z x78zum5 xdt5ytf x193iq5w xeuugli x1r8uery x1iyjqo2 xs83m0k xsyo7zv x16hj40l x10b6aqq x1yrsyyn']")).click();
         driver.findElement(By.xpath("//div[@aria-label='Remove Post Attachment']//i[@class='x1b0d499 x1d69dk1']")).click();
 
+        //Tag friend
         Thread.sleep(2000);
         WebElement Tag = driver.findElement(By.xpath("//div[@aria-label='Tag people']//div//div//img[@class='x1b0d499 xl1xv1r']"));
         Tag.click();
@@ -69,6 +71,7 @@ public class TC_FB_post_1 {
         Thread.sleep(2000);
         driver.findElement(By.xpath("//span[contains(text(),'Done')]")).click();
 
+        //Feeling
         Thread.sleep(2000);
         WebElement Feeling = driver.findElement(By.xpath("//div[@aria-label='Feeling/activity']//div//div//img[@class='x1b0d499 xl1xv1r']"));
         Feeling.click();
@@ -77,18 +80,20 @@ public class TC_FB_post_1 {
 
         Thread.sleep(2000);
 
-
+        //Background
         WebElement Background = driver.findElement(By.xpath("//span[@class='x139jcc6 x1kgmq87']//img[@class='xz74otr']"));
         Background.click();
         WebElement selectBackground = driver.findElement(By.xpath("//div[@aria-label='Solid black, background']//div[@class='x25l62i x1lq5wgf xgqcy7u x30kzoy x9jhf4c x10w6t97 x1td3qas']"));
         selectBackground.click();
 
+        //Publish
         WebElement Post = driver.findElement(By.xpath("//div[@aria-label='Post']//div[@class='x6s0dn4 x78zum5 xl56j7k x1608yet xljgi0e x1e0frkt']"));
         Post.click();
         Thread.sleep(4000);
 
+        //Scroll Down
         JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
-        javascriptExecutor.executeScript("window.scrollBy(0, document.body.scrollHeight / 35)");
+        javascriptExecutor.executeScript("window.scrollBy(0, document.body.scrollHeight / 70)");
 
         
     }
