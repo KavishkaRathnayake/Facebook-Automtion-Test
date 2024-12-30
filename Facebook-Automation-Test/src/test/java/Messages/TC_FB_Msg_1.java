@@ -26,33 +26,33 @@ public class TC_FB_Msg_1 {
     @Test
     public void TC_FB_Msg_1Test(){
         WebElement username = driver.findElement(By.id("email"));
-        username.sendKeys("jigiwi7156@jofuso.com");
+        username.sendKeys("patali9600@gmail.com");
 
         WebElement Password = driver.findElement(By.id("pass"));
-        Password.sendKeys("Celkon");
+        Password.sendKeys("celkon");
 
         WebElement LoginButton = driver.findElement(By.xpath("(//button[normalize-space()='Log in'])[1]"));
         LoginButton.click();
 
-        //Sometimes while Anonymous Login it is requiring the password again, for that;
-        WebElement AnonymousLoginPassword = driver.findElement(By.id("pass"));
-        AnonymousLoginPassword.sendKeys("Celkon");
+//        //Sometimes while Anonymous Login it is requiring the password again, for that;
+//        WebElement AnonymousLoginPassword = driver.findElement(By.id("pass"));
+//        AnonymousLoginPassword.sendKeys("celkon");
 
-        WebElement AnonymousLoginButton = driver.findElement(By.xpath("(//button[normalize-space()='Log in'])[1]"));
-        AnonymousLoginButton.click();
-
-        WebElement pass = driver.findElement(By.name("pass"));
-        pass.sendKeys("Celkon");
-        driver.findElement(By.name("login")).click();
+//        WebElement AnonymousLoginButton = driver.findElement(By.xpath("(//button[normalize-space()='Log in'])[1]"));
+//        AnonymousLoginButton.click();
+//
+//        WebElement pass = driver.findElement(By.name("pass"));
+//        pass.sendKeys("Celkon");
+//        driver.findElement(By.name("login")).click();
 
         //Messages
-        WebElement MessageButton = driver.findElement(By.xpath("//div[@aria-label='New Message']"));
+        WebElement MessageButton = driver.findElement(By.xpath("(//div[@aria-label='Messenger'])[1]"));
         MessageButton.click();
-        WebElement Recipient = driver.findElement(By.xpath("//*[@id=':rhj:']"));
-        Recipient.sendKeys("Virat Kohli");
-        WebElement select = driver.findElement(By.xpath("//li[@id='61561439230587']//div[@class='x9f619 x1ja2u2z x78zum5 x1n2onr6 x1r8uery x1iyjqo2 xs83m0k xeuugli x1qughib x6s0dn4 xozqiw3 x1q0g3np xykv574 xbmpl8g x4cne27 xifccgj']"));
-        select.click();
+        WebElement Recipient = driver.findElement(By.xpath("//span[contains(text(),'Virat Kohli')]"));
+        Recipient.click();
         WebElement typemessage = driver.findElement(By.xpath("//p[@class='xat24cr xdj266r']"));
-        typemessage.sendKeys("This is a test message from KAVISHKA" + Keys.ENTER);
+        typemessage.sendKeys("This is a test message from KAVISHKA");
+        WebElement Send = driver.findElement(By.xpath("//div[@aria-label='Press Enter to send']//*[name()='svg']"));
+        Send.click();
     }
 }
