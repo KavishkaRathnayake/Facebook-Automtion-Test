@@ -24,7 +24,7 @@ public class TC_FB_Msg_3 {
     }
 
     @Test
-    public void TC_FB_Msg_2Test() throws InterruptedException {
+    public void TC_FB_Msg_3Test() throws InterruptedException {
         WebElement username = driver.findElement(By.id("email"));
         username.sendKeys("patali9600@gmail.com");
 
