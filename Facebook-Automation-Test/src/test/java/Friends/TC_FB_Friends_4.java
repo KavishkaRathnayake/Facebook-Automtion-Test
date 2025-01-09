@@ -54,6 +54,6 @@ public class TC_FB_Friends_4 {
         WebElement Verify = driver.findElement(By.xpath("//span[normalize-space()='Follow Kavishka']"));
         String Follow = Verify.getText();
         System.out.println("Button Text Changes as: " + Follow);
-
+        driver.quit();
     }
 }
