@@ -52,6 +52,6 @@ public class TC_FB_Friends_5 {
         WebElement Verify = driver.findElement(By.xpath("//span[contains(text(),'Add friend')]"));
         String AddFriendButton = Verify.getText();
         System.out.println("Button Text Changes as: " + AddFriendButton);
-
+        driver.quit();
     }
 }
