@@ -81,7 +81,7 @@ public class TC_FB_Friends_2 {
             //Verify
             WebElement verify = driver.findElement(By.xpath("//span[@class='x1lliihq x6ikm8r x10wlt62 x1n2onr6 xlyipyv xuxw1ft'][normalize-space()='Friends']"));
             String Friends = verify.getText();
-            System.out.println("Button Shows: " + Friends);
+            System.out.println("Button Text Changes as: " + Friends);
             System.out.println("Yes, User in the Friend List");
 
             driver.quit();
