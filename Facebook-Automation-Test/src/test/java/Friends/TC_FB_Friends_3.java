@@ -76,7 +76,7 @@ public class TC_FB_Friends_3 {
         //Verify
         WebElement verify = driver.findElement(By.xpath("//div[@class='x1huwwth x16suv20']"));
         String Request = verify.getText();
-        System.out.println("Button Shows: " + Request);
+        System.out.println("Button Text Changes as: " + Request);
         System.out.println("Yes, Successfully Removed Friend List");
 
         driver.quit();
