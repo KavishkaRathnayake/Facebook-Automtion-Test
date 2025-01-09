@@ -52,7 +52,7 @@ public class TC_FB_Friends_1 {
 
         WebElement verify = driver.findElement(By.xpath("//span[contains(text(),'Cancel request')]"));
         String Request = verify.getText();
-        System.out.println("Button Shows: " + Request);
+        System.out.println("Button Text Changes as: " + Request);
 
         driver.quit();
     }
