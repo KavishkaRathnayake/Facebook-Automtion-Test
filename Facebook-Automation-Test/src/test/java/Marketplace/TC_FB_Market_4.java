@@ -15,7 +15,7 @@ import java.time.Duration;
 public class TC_FB_Market_4 {
     WebDriver driver;
     @BeforeMethod
-    public void TC_FB_Market_2(){
+    public void TC_FB_Market_4(){
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.setBrowserVersion("121");
         driver = new ChromeDriver(chromeOptions);
@@ -25,7 +25,7 @@ public class TC_FB_Market_4 {
     }
 
     @Test
-    public void TC_FB_Market_2Test() throws InterruptedException {
+    public void TC_FB_Market_4Test() throws InterruptedException {
         //Login to facebook
         WebElement username = driver.findElement(By.id("email"));
         username.sendKeys("patali9600@gmail.com");
