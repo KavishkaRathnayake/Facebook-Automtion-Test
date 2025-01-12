@@ -26,7 +26,7 @@ public class TC_FB_Market_5 {
     }
 
     @Test
-    public void TC_FB_Market_2Test() throws InterruptedException, AWTException {
+    public void TC_FB_Market_5Test() throws InterruptedException, AWTException {
         //Login to facebook
         WebElement username = driver.findElement(By.id("email"));
         username.sendKeys("patali9600@gmail.com");
@@ -99,6 +99,7 @@ public class TC_FB_Market_5 {
         WebElement SelectLocation = driver.findElement(By.xpath("//span[normalize-space()='City']"));
         SelectLocation.click();
 
+        Thread.sleep(1500);
         WebElement Next = driver.findElement(By.xpath("//span[contains(text(),'Next')]"));
         Next.click();
         WebElement Publish = driver.findElement(By.xpath("//span[contains(text(),'Publish')]"));
