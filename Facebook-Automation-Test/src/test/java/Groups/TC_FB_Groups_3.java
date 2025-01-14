@@ -69,7 +69,7 @@ public class TC_FB_Groups_3 {
         robot.keyRelease(KeyEvent.VK_ENTER);
 
         //Text
-        WebElement Text = driver.findElement(By.xpath("//div[@class='x1ejq31n xd10rxx x1sy0etr x17r0tee x9f619 xzsf02u xmper1u xngnso2 xo1l8bm x5yr21d x1qb5hxa x1a2a7pz x1iorvi4 x4uap5 xwib8y2 xkhd6sd xh8yej3 xha3pab']"));
+        WebElement Text = driver.findElement(By.xpath("//*[@id='mount_0_0_xV']/div/div[1]/div/div[4]/div/div/div[1]/div/div[2]/div/div/div/div/div[1]/form/div/div[1]/div/div/div/div[2]/div[1]/div[1]/div[1]/div[1]/div/div/div[1]/p"));
         Text.sendKeys("This is a Test Post by -KAVISHKA-");
 
         //post
