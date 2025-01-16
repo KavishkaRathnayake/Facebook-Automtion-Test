@@ -41,13 +41,18 @@ public class TC_FB_Notify_6 {
         view.click();
 
         //Delete Notification
-
-
-        WebElement Delete = driver.findElement(By.xpath(""));
+        Actions actions = new Actions(driver);
+        WebElement Notify = driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[5]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[2]/div[1]/a[1]/div[1]/div[2]"));
+        actions.moveToElement(Notify);
+        WebElement More = driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[5]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[3]/div[2]/div[1]/div[1]/div[1]/i[1]"));
+        More.click();
+        Thread.sleep(1500);
+        WebElement Delete = driver.findElement(By.xpath("//span[normalize-space()='Delete this notification']"));
+        Delete.click();
 
 
         Thread.sleep(5000);
-        System.out.println("The user  redirected to the correct section or content associated with the notification..");
+        System.out.println("Notifications Successfully  Deleted.");
         driver.quit();
     }
 }
