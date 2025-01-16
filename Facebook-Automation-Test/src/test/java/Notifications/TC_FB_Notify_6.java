@@ -43,7 +43,7 @@ public class TC_FB_Notify_6 {
         //Delete Notification
         Actions actions = new Actions(driver);
         WebElement Notify = driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[5]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[2]/div[1]/a[1]/div[1]/div[2]"));
-        actions.moveToElement(Notify);
+        actions.moveToElement(Notify).perform();
         WebElement More = driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[5]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[3]/div[2]/div[1]/div[1]/div[1]/i[1]"));
         More.click();
         Thread.sleep(1500);
