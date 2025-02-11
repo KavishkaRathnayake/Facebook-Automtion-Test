@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+
+<suite name = "GroupTest">
+    <test name = "TC_FB_Groups_1">
+        <parameter name = "Username" value="jegoh94617@konican.com"> </parameter>
+        <parameter name = "Password" value="celkon"></parameter>
+        <classes>
+            <class name = "Groups.TC_FB_Groups_1"/>
+        </classes>
+    </test>
+
+
+    <test name = "TC_FB_Groups_2">
+        <parameter name = "Username" value="jegoh94617@konican.com"> </parameter>
+        <parameter name = "Password" value="celkon"></parameter>
+        <classes>
+            <class name = "Groups.TC_FB_Groups_2"/>
+        </classes>
+    </test>
+
+    <test name="TC_FB_Groups_3">
+        <parameter name = "Username" value="jegoh94617@konican.com"> </parameter>
+        <parameter name = "Password" value="celkon"></parameter>
+        <classes>
+            <class name="Groups.TC_FB_Groups_3"></class>
+        </classes>
+    </test>
+
+    <test name="TC_FB_Groups_4">
+        <parameter name = "Username" value="jegoh94617@konican.com"> </parameter>
+        <parameter name = "Password" value="celkon"></parameter>
+        <classes>
+            <class name="Groups.TC_FB_Groups_4"></class>
+        </classes>
+    </test>
+
+    <test name="TC_FB_Groups_5">
+        <parameter name = "Username" value="jegoh94617@konican.com"> </parameter>
+        <parameter name = "Password" value="celkon"></parameter>
+        <classes>
+            <class name="Groups.TC_FB_Groups_5"></class>
+        </classes>
+    </test>
+
+    <test name="TC_FB_Groups_6">
+        <parameter name = "Username" value="jegoh94617@konican.com"> </parameter>
+        <parameter name = "Password" value="celkon"></parameter>
+        <classes>
+            <class name="Groups.TC_FB_Groups_6"></class>
+        </classes>
+    </test>
+
+</suite>
