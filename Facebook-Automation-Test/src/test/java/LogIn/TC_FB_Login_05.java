@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -19,7 +20,7 @@ public class TC_FB_Login_05 {
         chromeOptions.setBrowserVersion("121");
         driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.get("https://www.facebook.com/");
     }
     @Test
@@ -30,7 +31,7 @@ public class TC_FB_Login_05 {
 
         invalidCredentials2();
 
-        driver.quit();
+
 
     }
     //Error message when entering wrong credentials. (But that error message is Showing sometimes only )
@@ -39,6 +40,10 @@ public class TC_FB_Login_05 {
         String errormessage = invalidCredentials2.getText();
         System.out.println("Showing an error as: " + errormessage);
 
+    }
+    @AfterMethod
+    public void after(){
+        driver.quit();
     }
 
 }
