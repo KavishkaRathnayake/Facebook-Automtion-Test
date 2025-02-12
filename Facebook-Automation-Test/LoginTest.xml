@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<suite name = "Login">
+    <listeners>
+        <listener class-name ="com.aventstack.extentreports.testng.listener.ExtentITestListenerClassAdapter"></listener>
+    </listeners>
+
+    <test name="TC_FB_Login_01">
+        <parameter name = "Username" value = "jegoh94617@konican.com"></parameter>
+        <parameter name = "Password" value = "celkon"></parameter>
+        <classes>
+            <class name="LogIn.TC_FB_Login_01"/>
+        </classes>
+    </test>
+
+    <test name="TC_FB_Login_02">
+        <parameter name = "Username" value = "jegoh94617@konican.com"></parameter>
+        <parameter name = "Password" value= "xxxx"></parameter>
+        <classes>
+            <class name ="LogIn.TC_FB_Login_02"/>
+        </classes>
+    </test>
+
+    <test name="TC_FB_Login_03">
+        <parameter name = "Username" value = "fefah24039@eoilup.com"></parameter>
+        <parameter name = "Password" value= "celkon"></parameter>
+        <classes>
+            <class name ="LogIn.TC_FB_Login_03"></class>
+        </classes>
+    </test>
+
+    <test name="TC_FB_Login_04">
+        <parameter name = "Username" value = "fefah24039@eoilup.com"></parameter>
+        <parameter name = "Password" value= "xxxx"></parameter>
+        <classes>
+            <class name ="LogIn.TC_FB_Login_04"></class>
+        </classes>
+    </test>
+w
+    <test name="TC_FB_Login_05">
+        <classes>
+            <class name = "LogIn.TC_FB_Login_05"></class>
+        </classes>
+    </test>
+
+</suite>
+
+
