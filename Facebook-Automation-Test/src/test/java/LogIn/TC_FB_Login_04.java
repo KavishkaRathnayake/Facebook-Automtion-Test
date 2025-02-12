@@ -5,7 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -19,30 +21,36 @@ public class TC_FB_Login_04 {
         chromeOptions.setBrowserVersion("121");
         driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.get("https://www.facebook.com/");
     }
     @Test
-    public void TC_FB_Login_04() {
-        //        Enter a invalid username & invalid password
+    @Parameters({"Username","Password"})
+    public void TC_FB_Login_04(String user, String pass) {
+//      Enter a valid username & valid password
 
         WebElement username = driver.findElement(By.id("email"));
-        username.sendKeys("fefah24039@eoilup.com");
+        username.sendKeys(user);
 
         WebElement Password = driver.findElement(By.id("pass"));
-        Password.sendKeys("Micromax");
+        Password.sendKeys(pass);
 
         WebElement LoginButton = driver.findElement(By.xpath("(//button[normalize-space()='Log in'])[1]"));
         LoginButton.click();
 
-        invalidCredentials2();
+        invalidCredentials();
 
     }
     //Error message when entering wrong credentials. (But that error message is Showing sometimes only )
-    public void invalidCredentials2() {
-        WebElement invalidCredentials2 = driver.findElement(By.xpath("//div[@class='_9ay7']"));
-        String errormessage = invalidCredentials2.getText();
+    public void invalidCredentials() {
+        WebElement invalidCredentials = driver.findElement(By.xpath("//span[@class='_akzt']"));
+        String errormessage = invalidCredentials.getText();
         System.out.println("Showing an error as: " + errormessage);
 
+
+    }
+    @AfterMethod
+    public void after(){
+        driver.quit();
     }
 }
