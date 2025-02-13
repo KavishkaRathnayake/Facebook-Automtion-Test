@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name = "MarketPlace Test">
+    <listeners>
+        <listener class-name="com.aventstack.extentreports.testng.listener.ExtentITestListenerClassAdapter"></listener>
+    </listeners>
+
+    <test name = "TC_FB_Market_1">
+        <parameter name = "Username" value = "jegoh94617@konican.com"></parameter>
+        <parameter name = "Password" value = "celkon"></parameter>
+        <classes>
+            <class name = "Marketplace.TC_FB_Market_1"/>
+        </classes>
+    </test>
+
+    <test name = "TC_FB_Market_2">
+        <parameter name = "Username" value = "jegoh94617@konican.com"></parameter>
+        <parameter name = "Password" value = "celkon"></parameter>
+        <classes>
+            <class name = "Marketplace.TC_FB_Market_2"/>
+        </classes>
+    </test>
+
+    <test name = "TC_FB_Market_3">
+        <parameter name = "Username" value = "jegoh94617@konican.com"></parameter>
+        <parameter name = "Password" value = "celkon"></parameter>
+        <classes>
+            <class name = "Marketplace.TC_FB_Market_3"/>
+        </classes>
+    </test>
+
+    <test name = "TC_FB_Market_4">
+        <parameter name = "Username" value = "jegoh94617@konican.com"></parameter>
+        <parameter name = "Password" value = "celkon"></parameter>
+        <classes>
+            <class name = "Marketplace.TC_FB_Market_4"/>
+        </classes>
+    </test>
+
+
+    <test name = "TC_FB_Market_5">
+        <parameter name = "Username" value = "jegoh94617@konican.com"></parameter>
+        <parameter name = "Password" value = "celkon"></parameter>
+        <classes>
+            <class name = "Marketplace.TC_FB_Market_5"/>
+        </classes>
+    </test>
+
+    <test name = "TC_FB_Market_6">
+        <parameter name = "Username" value = "jegoh94617@konican.com"></parameter>
+        <parameter name = "Password" value = "celkon"></parameter>
+        <classes>
+            <class name = "Marketplace.TC_FB_Market_6"/>
+        </classes>
+    </test>
+
+    <test name = "TC_FB_Market_7">
+        <parameter name = "Username" value = "jegoh94617@konican.com"></parameter>
+        <parameter name = "Password" value = "celkon"></parameter>
+        <classes>
+            <class name = "Marketplace.TC_FB_Market_7"/>
+        </classes>
+    </test>
+
+    <test name = "TC_FB_Market_8">
+        <parameter name = "Username" value = "jegoh94617@konican.com"></parameter>
+        <parameter name = "Password" value = "celkon"></parameter>
+        <classes>
+            <class name = "Marketplace.TC_FB_Market_8"/>
+        </classes>
+    </test>
+
+    <test name = "TC_FB_Market_9">
+        <parameter name = "Username" value = "jegoh94617@konican.com"></parameter>
+        <parameter name = "Password" value = "celkon"></parameter>
+        <classes>
+            <class name = "Marketplace.TC_FB_Market_9"/>
+        </classes>
+    </test>
+
+    <test name = "TC_FB_Market_10">
+        <classes>
+            <class name = "Marketplace.TC_FB_Market_10"/>
+        </classes>
+    </test>
+
+</suite>
