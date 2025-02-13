@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name = "Reels Test Suite">
+    <listeners>
+        <listener class-name="com.aventstack.extentreports.testng.listener.ExtentITestListenerClassAdapter"></listener>
+    </listeners>
+
+    <test name = "TC_FB_Reels_1">
+        <parameter name = "Username" value = "jegoh94617@konican.com"></parameter>
+        <parameter name = "Password" value = "celkon"></parameter>
+        <classes>
+            <class name = "Reels.TC_FB_Reels_1"/>
+        </classes>
+    </test>
+
+    <test name = "TC_FB_Reels_2">
+        <parameter name = "Username" value = "jegoh94617@konican.com"></parameter>
+        <parameter name = "Password" value = "celkon"></parameter>
+        <classes>
+            <class name = "Reels.TC_FB_Reels_2"/>
+        </classes>
+    </test>
+
+    <test name = "TC_FB_Reels_3">
+        <parameter name = "Username" value = "jegoh94617@konican.com"></parameter>
+        <parameter name = "Password" value = "celkon"></parameter>
+        <classes>
+            <class name = "Reels.TC_FB_Reels_3"/>
+        </classes>
+    </test>
+
+    <test name = "TC_FB_Reels_4">
+        <parameter name = "Username" value = "jegoh94617@konican.com"></parameter>
+        <parameter name = "Password" value = "celkon"></parameter>
+        <classes>
+            <class name = "Reels.TC_FB_Reels_4"/>
+        </classes>
+    </test>
+
+    <test name = "TC_FB_Reels_5">
+        <parameter name = "Username" value = "jegoh94617@konican.com"></parameter>
+        <parameter name = "Password" value = "celkon"></parameter>
+        <classes>
+            <class name = "Reels.TC_FB_Reels_5"/>
+        </classes>
+    </test>
+
+    <test name = "TC_FB_Reels_6">
+        <parameter name = "Username" value = "jegoh94617@konican.com"></parameter>
+        <parameter name = "Password" value = "celkon"></parameter>
+        <classes>
+            <class name = "Reels.TC_FB_Reels_6"/>
+        </classes>
+    </test>
+
+    <test name = "TC_FB_Reels_7">
+        <parameter name = "Username" value = "jegoh94617@konican.com"></parameter>
+        <parameter name = "Password" value = "celkon"></parameter>
+        <classes>
+            <class name = "Reels.TC_FB_Reels_7"/>
+        </classes>
+    </test>
+
+    <test name = "TC_FB_Reels_8">
+        <parameter name = "Username" value = "jegoh94617@konican.com"></parameter>
+        <parameter name = "Password" value = "celkon"></parameter>
+        <classes>
+            <class name = "Reels.TC_FB_Reels_8"/>
+        </classes>
+    </test>
+
+    <test name = "TC_FB_Reels_9">
+        <parameter name = "Username" value = "jegoh94617@konican.com"></parameter>
+        <parameter name = "Password" value = "celkon"></parameter>
+        <classes>
+            <class name = "Reels.TC_FB_Reels_9"/>
+        </classes>
+    </test>
+</suite>
