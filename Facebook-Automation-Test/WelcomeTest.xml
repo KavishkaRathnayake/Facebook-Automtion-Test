@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name = "Welcome page test suite">
+    <listeners>
+        <listener class-name="com.aventstack.extentreports.testng.listener.ExtentITestListenerClassAdapter"></listener>
+    </listeners>
+    <test name = "TC_FB_Welcome" >
+        <classes>
+            <class name = "WelcomePage.TC_FB_Welcome_1"/>
+            <class name = "WelcomePage.TC_FB_Welcome_2"/>
+        </classes>
+    </test>
+</suite>
