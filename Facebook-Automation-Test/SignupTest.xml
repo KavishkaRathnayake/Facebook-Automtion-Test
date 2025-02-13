@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name = "Signup Test Suite">
+    <listeners>
+        <listener class-name="com.aventstack.extentreports.testng.listener.ExtentITestListenerClassAdapter"></listener>
+    </listeners>
+
+    <test name = "TC_FB_Signup_01">
+        <parameter name = "Firstname" value = "Kaveesha"></parameter>
+        <parameter name = "Lastname" value = "Rathnayaka"></parameter>
+        <parameter name = "Username" value = "mepeja4235@sectorid.com"></parameter>
+        <parameter name = "Password" value = "celkon"></parameter>
+        <classes>
+            <class name = "SignUp.TC_FB_Signup_01"/>
+        </classes>
+    </test>
+
+
+    <test name = "TC_FB_Signup_02">
+        <parameter name = "Firstname" value = "4"></parameter>
+        <parameter name = "Lastname" value = "6"></parameter>
+        <parameter name = "Username" value = "mepeja4235@sectorid.com"></parameter>
+        <parameter name = "Password" value = "celkon"></parameter>
+        <classes>
+            <class name = "SignUp.TC_FB_Signup_02"/>
+        </classes>
+    </test>
+
+
+    <test name = "TC_FB_Signup_03">
+        <parameter name = "Firstname" value = "Kaveesha"></parameter>
+        <parameter name = "Lastname" value = "Rathnayaka"></parameter>
+        <parameter name = "Username" value = "mepeja4235@sectorid.com"></parameter>
+        <parameter name = "Password" value = "celkon"></parameter>
+        <classes>
+            <class name = "SignUp.TC_FB_Signup_03"/>
+        </classes>
+    </test>
+
+    <test name = "TC_FB_Signup_04">
+        <parameter name = "Firstname" value = "Kaveesha"></parameter>
+        <parameter name = "Lastname" value = "Rathnayaka"></parameter>
+        <parameter name = "Username" value = "hovihama.lk"></parameter>
+        <parameter name = "Password" value = "celkon"></parameter>
+        <classes>
+            <class name = "SignUp.TC_FB_Signup_04"/>
+        </classes>
+    </test>
+
+    <test name = "TC_FB_Signup_05">
+        <parameter name = "Firstname" value = "Kaveesha"></parameter>
+        <parameter name = "Lastname" value = "Rathnayaka"></parameter>
+        <parameter name = "Username" value = "mepeja4235@sectorid.com"></parameter>
+        <parameter name = "Password" value = "xxxx"></parameter>
+        <classes>
+            <class name = "SignUp.TC_FB_Signup_05"/>
+        </classes>
+    </test>
+
+    <test name = "TC_FB_Signup_06">
+        <parameter name = "Firstname" value = ""></parameter>
+        <parameter name = "Lastname" value = ""></parameter>
+        <parameter name = "Username" value = "mepeja4235@sectorid.com"></parameter>
+        <parameter name = "Password" value = "celkon"></parameter>
+        <classes>
+            <class name = "SignUp.TC_FB_Signup_06"/>
+        </classes>
+    </test>
+
+    <test name = "TC_FB_Signup_07">
+        <parameter name = "Firstname" value = "Kaveesha"></parameter>
+        <parameter name = "Lastname" value = "Rathnayaka"></parameter>
+        <parameter name = "Username" value = ""></parameter>
+        <parameter name = "Password" value = "celkon"></parameter>
+        <classes>
+            <class name = "SignUp.TC_FB_Signup_07"/>
+        </classes>
+    </test>
+
+    <test name = "TC_FB_Signup_08">
+        <parameter name = "Firstname" value = "Kaveesha"></parameter>
+        <parameter name = "Lastname" value = "Rathnayaka"></parameter>
+        <parameter name = "Username" value = "mepeja4235@sectorid.com"></parameter>
+        <parameter name = "Password" value = ""></parameter>
+        <classes>
+            <class name = "SignUp.TC_FB_Signup_08"/>
+        </classes>
+    </test>
+</suite>
