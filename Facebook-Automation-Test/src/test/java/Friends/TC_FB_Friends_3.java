@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -17,29 +19,30 @@ public class TC_FB_Friends_3 {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.setBrowserVersion("121");
         driver = new ChromeDriver(chromeOptions);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1000));
         driver.manage().window().maximize();
         driver.get("https://www.facebook.com/");
     }
 
     @Test(priority = 1)
-    public void TC_FB_Friends_3Test() {
+    @Parameters({"Username","Password"})
+    public void TC_FB_Friends_3Test(String User, String pass) {
 
         //User A
         //Login to facebook
         WebElement username = driver.findElement(By.id("email"));
-        username.sendKeys("patali9600@gmail.com");
+        username.sendKeys(User);
 
         WebElement Password = driver.findElement(By.id("pass"));
-        Password.sendKeys("celkon");
+        Password.sendKeys(pass);
 
         WebElement LoginButton = driver.findElement(By.xpath("(//button[normalize-space()='Log in'])[1]"));
         LoginButton.click();
 
         WebElement Search = driver.findElement(By.xpath("//input[@placeholder='Search Facebook']"));
-        Search.sendKeys("Kavishka Selenium" + Keys.ENTER);
+        Search.sendKeys("Thirani Nisha" + Keys.ENTER);
 
-        WebElement GoToProfile = driver.findElement(By.xpath("//a[normalize-space()='Kavishka Selenium']"));
+        WebElement GoToProfile = driver.findElement(By.xpath("//a[@aria-label='Thirani Nisha']//span[contains(text(),'Thirani Nisha')]"));
         GoToProfile.click();
 
         WebElement AddFriendButton = driver.findElement(By.xpath("//span[contains(text(),'Add friend')]"));
@@ -52,15 +55,16 @@ public class TC_FB_Friends_3 {
     }
 
     @Test(priority = 2)
-    public void TC_FB_Friends_3Test1() {
+    @Parameters({"Username2","Password2"})
+    public void TC_FB_Friends_3Test1(String user, String pass) {
 
         //User B
         //Login to facebook
         WebElement username = driver.findElement(By.id("email"));
-        username.sendKeys("jegoh94617@konican.com");
+        username.sendKeys(user);
 
         WebElement Password = driver.findElement(By.id("pass"));
-        Password.sendKeys("celkon");
+        Password.sendKeys(pass);
 
         WebElement LoginButton = driver.findElement(By.xpath("(//button[normalize-space()='Log in'])[1]"));
         LoginButton.click();
@@ -79,7 +83,11 @@ public class TC_FB_Friends_3 {
         System.out.println("Button Text Changes as: " + Request);
         System.out.println("Yes, Successfully Removed Friend List");
 
-        driver.quit();
 
+
+    }
+    @AfterMethod
+    public void quit(){
+        driver.quit();
     }
 }
