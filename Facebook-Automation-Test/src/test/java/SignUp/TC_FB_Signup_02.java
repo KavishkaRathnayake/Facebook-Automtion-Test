@@ -6,7 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -24,17 +26,18 @@ public class TC_FB_Signup_02 {
         driver.get("https://web.facebook.com/");
     }
     @Test
-    public void TC_FB_Signup_02Test() throws InterruptedException {
+    @Parameters({"Firstname","Lastname","Username","Password"})
+    public void TC_FB_Signup_02Test(String first, String Last, String User, String Pass) throws InterruptedException {
         //visit signup page
         WebElement SignupButton = driver.findElement(By.xpath("(//a[normalize-space()='Create new account'])[1]"));
         SignupButton.click();
 
-        //Enter an invalid name
+        //Enter valid name
         WebElement FirstName = driver.findElement(By.name("firstname"));
-        FirstName.sendKeys("4");
+        FirstName.sendKeys(first);
 
         WebElement SurName = driver.findElement(By.name("lastname"));
-        SurName.sendKeys("6");
+        SurName.sendKeys(Last);
 
         //Enter a valid Birthdate
         WebElement Date = driver.findElement(By.name("birthday_day"));
@@ -80,11 +83,11 @@ public class TC_FB_Signup_02 {
 
         //Enter a valid email
         WebElement Email = driver.findElement(By.name("reg_email__"));
-        Email.sendKeys("fefah24039@eoilup.com");
+        Email.sendKeys(User);
 
         //Enter a valid password
         WebElement Password = driver.findElement(By.name("reg_passwd__"));
-        Password.sendKeys("Celkon");
+        Password.sendKeys(Pass);
 
         //Click on Signup Button
         WebElement SignupButton2 = driver.findElement(By.name("websubmit"));
@@ -95,6 +98,10 @@ public class TC_FB_Signup_02 {
         String ErrorMessage = PopupBox.getText();
         System.out.println("Error Message: " + ErrorMessage);
 
+
+    }
+    @AfterMethod
+    public void after(){
         driver.quit();
     }
 }
