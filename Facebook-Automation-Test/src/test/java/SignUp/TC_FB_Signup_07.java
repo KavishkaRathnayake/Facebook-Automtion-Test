@@ -6,7 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class TC_FB_Signup_07 {
@@ -22,17 +24,18 @@ public class TC_FB_Signup_07 {
     }
 
     @Test
-    public void TC_FB_Signup_01Test() throws InterruptedException {
+    @Parameters({"Firstname","Lastname","Username","Password"})
+    public void TC_FB_Signup_07Test(String first, String Last, String User, String Pass) throws InterruptedException {
         //visit signup page
         WebElement SignupButton = driver.findElement(By.xpath("(//a[normalize-space()='Create new account'])[1]"));
         SignupButton.click();
 
         //Enter valid name
         WebElement FirstName = driver.findElement(By.name("firstname"));
-        FirstName.sendKeys("Kaveesha");
+        FirstName.sendKeys(first);
 
         WebElement SurName = driver.findElement(By.name("lastname"));
-        SurName.sendKeys("Rathnayaka");
+        SurName.sendKeys(Last);
 
         //Enter valid Birthdate
         WebElement Date = driver.findElement(By.xpath("//select[@id='day']"));
@@ -66,11 +69,11 @@ public class TC_FB_Signup_07 {
 
         //Enter valid Email
         WebElement Email =  driver.findElement(By.name("reg_email__"));
-        Email.sendKeys(" ");
+        Email.sendKeys(User);
 
         //Enter Valid Password
         WebElement Password = driver.findElement(By.name("reg_passwd__"));
-        Password.sendKeys("Celkon");
+        Password.sendKeys(Pass);
 
         //Click on Signup Button
         WebElement SignupButton2 = driver.findElement(By.name("websubmit"));
@@ -79,6 +82,10 @@ public class TC_FB_Signup_07 {
         //Error Message
         String ErrorMessage = driver.findElement(By.xpath("//div[@class='uiContextualLayerPositioner _572t uiLayer']//div[@class='uiContextualLayer uiContextualLayerLeft']")).getText();
         System.out.println("Error Message: " + ErrorMessage);
+
+    }
+    @AfterMethod
+    public void after(){
         driver.quit();
     }
 
