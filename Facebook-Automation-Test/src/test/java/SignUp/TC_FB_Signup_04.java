@@ -6,7 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class TC_FB_Signup_04 {
@@ -21,17 +23,18 @@ public class TC_FB_Signup_04 {
         driver.get("https://web.facebook.com/");
     }
     @Test
-    public void TC_FB_Signup_04Test() throws InterruptedException {
+    @Parameters({"Firstname","Lastname","Username","Password"})
+    public void TC_FB_Signup_04Test(String first, String Last, String User, String Pass) throws InterruptedException {
         //visit signup page
-        driver.findElement(By.xpath("(//a[normalize-space()='Create new account'])[1]")).click();
+        WebElement SignupButton = driver.findElement(By.xpath("(//a[normalize-space()='Create new account'])[1]"));
+        SignupButton.click();
 
+        //Enter valid name
+        WebElement FirstName = driver.findElement(By.name("firstname"));
+        FirstName.sendKeys(first);
 
-        //Enter a valid name
-        WebElement FirstName  = driver.findElement(By.name("firstname"));
-        FirstName.sendKeys("Kavishka");
-
-        WebElement Suraneme = driver.findElement(By.name("lastname"));
-        Suraneme.sendKeys("Rathnayaka");
+        WebElement SurName = driver.findElement(By.name("lastname"));
+        SurName.sendKeys(Last);
 
         //Enter an valid Birthdate
         WebElement Date = driver.findElement(By.name("birthday_day"));
@@ -71,13 +74,13 @@ public class TC_FB_Signup_04 {
 
         //Enter a invalid email
         WebElement Email = driver.findElement(By.name("reg_email__"));
-        Email.sendKeys("hovihama.lk");
+        Email.sendKeys(User);
 
 //        WebElement Mobilenumber = driver.findElement(By.name("reg_email__"));
 //        Mobilenumber.sendKeys("-*6464665%$");
 
         WebElement Password = driver.findElement(By.name("reg_passwd__"));
-        Password.sendKeys("Celkon");
+        Password.sendKeys(Pass);
 
         //Click on Signup Button
         driver.findElement(By.name("websubmit")).click();
@@ -88,6 +91,10 @@ public class TC_FB_Signup_04 {
         String ErrorMessage = driver.findElement(By.xpath("//div[@class='uiContextualLayer uiContextualLayerLeft']")).getText();
         System.out.println("Error Message: " + ErrorMessage);
 
+
+    }
+    @AfterMethod
+    public void after(){
         driver.quit();
     }
 }
