@@ -5,7 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -23,13 +25,14 @@ public class TC_FB_Forgot_4 {
         driver.get("https://web.facebook.com/?");
     }
     @Test
-    public void TC_FB_Forgot_2Test(){
-        //Visit to password reset page
-        driver.findElement(By.xpath("//a[normalize-space()='Forgotten password?']")).click();
+    @Parameters("Username")
+    public void TC_FB_Forgot_4Test(String user){
+        //visit to the password reset page
+        driver.findElement(By.xpath("(//a[normalize-space()='Forgotten password?'])[1]")).click();
 
-        //Enter an invalid email
-        WebElement EnterEmail = driver.findElement(By.name("email"));
-        EnterEmail.sendKeys("461463");
+        //Enter a Valid Email
+        WebElement EnterEmail = driver.findElement(By.xpath("//input[@id='identify_email']"));
+        EnterEmail.sendKeys(user);
 
         WebElement SearchButton = driver.findElement(By.xpath("//button[@id='did_submit']"));
         SearchButton.click();
@@ -38,7 +41,9 @@ public class TC_FB_Forgot_4 {
         String ErrorMessage = PopupBox.getText();
         System.out.println(ErrorMessage);
 
-
+    }
+    @AfterMethod
+    public void quit(){
         driver.quit();
     }
 }
