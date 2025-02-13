@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name = "Forgot password Test Suite">
+    <listeners>
+        <listener class-name="com.aventstack.extentreports.testng.listener.ExtentITestListenerClassAdapter"></listener>
+    </listeners>
+
+    <test name = "TC_FB_Forgot_1">
+        <parameter name = "Username" value = "jegoh94617@konican.com"></parameter>
+        <classes>
+            <class name = "ForgotPassword.TC_FB_Forgot_1"/>
+        </classes>
+    </test>
+
+    <test name = "TC_FB_Forgot_2">
+    <parameter name = "Username" value = "hovihama.lk"></parameter>
+    <classes>
+        <class name = "ForgotPassword.TC_FB_Forgot_2"/>
+    </classes>
+</test>
+
+    <test name = "TC_FB_Forgot_3">
+        <parameter name = "Username" value = "0773681755"></parameter>
+        <classes>
+            <class name = "ForgotPassword.TC_FB_Forgot_3"/>
+        </classes>
+    </test>
+
+    <test name = "TC_FB_Forgot_4">
+        <parameter name = "Username" value = "461463"></parameter>
+        <classes>
+            <class name = "ForgotPassword.TC_FB_Forgot_4"/>
+        </classes>
+    </test>
+
+</suite>
