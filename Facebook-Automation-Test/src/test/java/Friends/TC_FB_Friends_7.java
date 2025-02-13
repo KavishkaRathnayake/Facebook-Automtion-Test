@@ -5,7 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -18,18 +20,19 @@ public class TC_FB_Friends_7 {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.setBrowserVersion("121");
         driver = new ChromeDriver(chromeOptions);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1000));
         driver.manage().window().maximize();
         driver.get("https://www.facebook.com/");
     }
     @Test
-    public void TC_FB_Friends_7Test() throws InterruptedException {
+    @Parameters({"Username","Password"})
+    public void TC_FB_Friends_7Test(String user,String pass) throws InterruptedException {
         //Login to facebook
         WebElement username = driver.findElement(By.id("email"));
-        username.sendKeys("patali9600@gmail.com");
+        username.sendKeys(user);
 
         WebElement Password = driver.findElement(By.id("pass"));
-        Password.sendKeys("celkon");
+        Password.sendKeys(pass);
 
         WebElement LoginButton = driver.findElement(By.xpath("(//button[normalize-space()='Log in'])[1]"));
         LoginButton.click();
@@ -42,6 +45,10 @@ public class TC_FB_Friends_7 {
         Thread.sleep(2500);
 
         System.out.println("Yes, The friends list is displaying with the names and profile pictures of friends.");
+
+    }
+    @AfterMethod
+    public void quit(){
         driver.quit();
     }
 }
