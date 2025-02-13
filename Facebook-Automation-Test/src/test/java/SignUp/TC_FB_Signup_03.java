@@ -6,7 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class TC_FB_Signup_03 {
@@ -23,17 +25,18 @@ public class TC_FB_Signup_03 {
     }
 
     @Test
-    public void TC_FB_Signup_03Test() throws InterruptedException {
+    @Parameters({"Firstname","Lastname","Username","Password"})
+    public void TC_FB_Signup_03Test(String first, String Last, String User, String Pass) throws InterruptedException {
         //visit signup page
-        WebElement SubmitButton = driver.findElement(By.xpath("(//a[normalize-space()='Create new account'])[1]"));
-        SubmitButton.click();
+        WebElement SignupButton = driver.findElement(By.xpath("(//a[normalize-space()='Create new account'])[1]"));
+        SignupButton.click();
 
-        //Enter a valid name
+        //Enter valid name
         WebElement FirstName = driver.findElement(By.name("firstname"));
-        FirstName.sendKeys("Medhanga");
+        FirstName.sendKeys(first);
 
         WebElement SurName = driver.findElement(By.name("lastname"));
-        SurName.sendKeys("Bandara");
+        SurName.sendKeys(Last);
 
         //Enter an invalid Birthdate
         WebElement Date = driver.findElement(By.name("birthday_day"));
@@ -81,11 +84,11 @@ public class TC_FB_Signup_03 {
 
             //Enter a valid email
             WebElement Email = driver.findElement(By.name("reg_email__"));
-            Email.sendKeys("fefah24039@eoilup.com");
+            Email.sendKeys(User);
 
             //Enter a valid password
             WebElement Password = driver.findElement(By.name("reg_passwd__"));
-            Password.sendKeys("Celkon");
+            Password.sendKeys(Pass);
 
             WebElement SubmitButton2= driver.findElement(By.name("websubmit"));
             SubmitButton2.click();
@@ -96,9 +99,13 @@ public class TC_FB_Signup_03 {
             String ErrorMessage =  PopupBox.getText();
             System.out.println("Error Message: " + ErrorMessage);
 
-            driver.quit();
+
         }
 
+    }
+    @AfterMethod
+    public void after(){
+        driver.quit();
     }
 
 }
