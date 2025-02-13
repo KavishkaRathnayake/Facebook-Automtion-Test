@@ -5,7 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -24,33 +26,36 @@ public class TC_FB_Forgot_1 {
     }
 
     @Test
-    public void TC_FB_Forgot_1Test(){
+    @Parameters("Username")
+    public void TC_FB_Forgot_1Test(String user){
         //visit to the password reset page
         driver.findElement(By.xpath("(//a[normalize-space()='Forgotten password?'])[1]")).click();
 
         //Enter a Valid Email
-        WebElement EnterEmail = driver.findElement(By.name("email"));
-        EnterEmail.sendKeys("jigiwi7156@jofuso.com");
+        WebElement EnterEmail = driver.findElement(By.xpath("//input[@id='identify_email']"));
+        EnterEmail.sendKeys(user);
 
         WebElement SearchButton = driver.findElement(By.xpath("//button[@id='did_submit']"));
         SearchButton.click();
 
-        Boolean EmailButton = driver.findElement(By.name("send_email")).isSelected();
+        WebElement Tryway = driver.findElement(By.xpath("//a[normalize-space()='Try another way']"));
+        Tryway.click();
+
+        Boolean EmailButton = driver.findElement(By.xpath("//input[@id='send_email']")).isSelected();
         WebElement  PasswordButton = driver.findElement(By.name("recover_method"));
         PasswordButton.isSelected();
 
         if((EmailButton)){
-            WebElement selectEmailButton = driver.findElement(By.name("send_email"));
+            WebElement selectEmailButton = driver.findElement(By.xpath("//input[@id='send_email']"));
             selectEmailButton.click();
         }
 
         WebElement ContinueButton = driver.findElement(By.xpath("//button[normalize-space()='Continue']"));
         ContinueButton.click();
 
-        driver.close();
-
-
-
-
+    }
+    @AfterMethod
+    public void quit(){
+        driver.quit();
     }
 }
