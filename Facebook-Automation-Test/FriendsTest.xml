@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Friends Test ">
+    <test name="TC_FB_Friends_1">
+        <parameter name = "Username" value="jegoh94617@konican.com"> </parameter>
+        <parameter name = "Password" value="celkon"></parameter>
+        <classes>
+            <class name="Friends.TC_FB_Friends_1"/>
+        </classes>
+    </test>
+
+    <test name="TC_FB_Friends_2">
+        <parameter name = "Username" value="jegoh94617@konican.com"> </parameter>
+        <parameter name = "Password" value="celkon"></parameter>
+
+        <parameter name = "Username2" value="dutugamunu9600@gmail.com"> </parameter>
+        <parameter name = "Password2" value="celkon"></parameter>
+
+        <classes>
+            <class name="Friends.TC_FB_Friends_2"/>
+        </classes>
+    </test>
+
+    <test name="TC_FB_Friends_3">
+        <parameter name = "Username" value="jegoh94617@konican.com"> </parameter>
+        <parameter name = "Password" value="celkon"></parameter>
+
+        <parameter name = "Username2" value="dutugamunu9600@gmail.com"> </parameter>
+        <parameter name = "Password2" value="celkon"></parameter>
+        <classes>
+            <class name="Friends.TC_FB_Friends_3"/>
+        </classes>
+    </test>
+
+    <test name="TC_FB_Friends_4">
+        <parameter name = "Username" value="jegoh94617@konican.com"> </parameter>
+        <parameter name = "Password" value="celkon"></parameter>
+        <classes>
+            <class name="Friends.TC_FB_Friends_4"/>
+        </classes>
+    </test>
+
+    <test name="TC_FB_Friends_5">
+        <parameter name = "Username" value="jegoh94617@konican.com"> </parameter>
+        <parameter name = "Password" value="celkon"></parameter>
+        <classes>
+            <class name="Friends.TC_FB_Friends_5"/>
+        </classes>
+    </test>
+
+    <test name="TC_FB_Friends_6">
+        <parameter name = "Username" value="jegoh94617@konican.com"> </parameter>
+        <parameter name = "Password" value="celkon"></parameter>
+        <classes>
+            <class name="Friends.TC_FB_Friends_6"/>
+        </classes>
+    </test>
+
+    <test name="TC_FB_Friends_7">
+        <parameter name = "Username" value="jegoh94617@konican.com"> </parameter>
+        <parameter name = "Password" value="celkon"></parameter>
+        <classes>
+            <class name="Friends.TC_FB_Friends_7"/>
+        </classes>
+    </test>
+
+
+</suite>
