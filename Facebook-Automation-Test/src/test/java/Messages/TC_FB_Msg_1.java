@@ -6,7 +6,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -24,12 +26,13 @@ public class TC_FB_Msg_1 {
         driver.get("https://www.facebook.com/");
     }
     @Test
-    public void TC_FB_Msg_1Test(){
+    @Parameters({"Username","Password"})
+    public void TC_FB_Msg_1Test(String user, String Pass){
         WebElement username = driver.findElement(By.id("email"));
-        username.sendKeys("patali9600@gmail.com");
+        username.sendKeys(user);
 
         WebElement Password = driver.findElement(By.id("pass"));
-        Password.sendKeys("celkon");
+        Password.sendKeys(Pass);
 
         WebElement LoginButton = driver.findElement(By.xpath("(//button[normalize-space()='Log in'])[1]"));
         LoginButton.click();
@@ -51,8 +54,11 @@ public class TC_FB_Msg_1 {
         WebElement Recipient = driver.findElement(By.xpath("//span[contains(text(),'Virat Kohli')]"));
         Recipient.click();
         WebElement typemessage = driver.findElement(By.xpath("//p[@class='xat24cr xdj266r']"));
-        typemessage.sendKeys("This is a test message from KAVISHKA");
-        WebElement Send = driver.findElement(By.xpath("//div[@aria-label='Press Enter to send']//*[name()='svg']"));
-        Send.click();
+        typemessage.sendKeys("This is a test message from KAVISHKA" + Keys.ENTER);
+
+    }
+    @AfterMethod
+    public void after(){
+        driver.quit();
     }
 }
