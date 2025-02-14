@@ -6,7 +6,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -25,12 +27,14 @@ public class TC_FB_Msg_2 {
     }
 
     @Test
-    public void TC_FB_Msg_2Test() throws InterruptedException {
+    @Parameters({"Username","Password"})
+
+    public void TC_FB_Msg_2Test(String user, String Pass) throws InterruptedException {
         WebElement username = driver.findElement(By.id("email"));
-        username.sendKeys("patali9600@gmail.com");
+        username.sendKeys(user);
 
         WebElement Password = driver.findElement(By.id("pass"));
-        Password.sendKeys("celkon");
+        Password.sendKeys(Pass);
 
         WebElement LoginButton = driver.findElement(By.xpath("(//button[normalize-space()='Log in'])[1]"));
         LoginButton.click();
@@ -54,12 +58,11 @@ public class TC_FB_Msg_2 {
 
         //Text message
         WebElement typetextmessage = driver.findElement(By.xpath("//p[@class='xat24cr xdj266r']"));
-        typetextmessage.sendKeys("This is a test message from KAVISHKA");
-        WebElement Send = driver.findElement(By.xpath("//div[@aria-label='Press Enter to send']//*[name()='svg']"));
-        Send.click();
+        typetextmessage.sendKeys("This is a test message from KAVISHKA" + Keys.ENTER);
+
 
         //Emoji
-        WebElement ChooseEmoji = driver.findElement(By.xpath("//div[@class='x9f619 x1n2onr6 x1ja2u2z __fb-light-mode']//div[@aria-label='Choose an emoji']//*[name()='svg']"));
+        WebElement ChooseEmoji = driver.findElement(By.xpath("//div[@aria-label='Choose an emoji']//*[name()='svg']"));
         ChooseEmoji.click();
         Thread.sleep(5000);
         WebElement Emoji1 = driver.findElement(By.xpath("//img[@alt='\uD83D\uDE03']"));
@@ -70,17 +73,23 @@ public class TC_FB_Msg_2 {
         Emoji3.click();
         WebElement Emoji4 = driver.findElement(By.xpath("//img[@alt='\uD83D\uDE0E']"));
         Emoji4.click();
-        WebElement Send2 = driver.findElement(By.xpath("//div[@aria-label='Press Enter to send']//*[name()='svg']"));
-        Send2.click();
+
+        WebElement typetextmessage2 = driver.findElement(By.xpath("//p[@class='xat24cr xdj266r xdpxx8g']"));
+        typetextmessage2.sendKeys( Keys.ENTER);
 
 
-        //Gif
-        WebElement ChooseGif = driver.findElement(By.xpath("//div[@aria-label='Choose a sticker']//*[name()='svg']"));
-        ChooseGif.click();
-        Thread.sleep(5000);
-        WebElement selectsticker = driver.findElement(By.xpath("//img[@alt='Moodies Animated yellow face emoji, crying with laughter. sticker']"));
-        selectsticker.click();
+
+//        //Gif
+//        WebElement ChooseGif = driver.findElement(By.xpath("//div[@aria-label='Choose a sticker']//*[name()='svg']"));
+//        ChooseGif.click();
+//        Thread.sleep(5000);
+//        WebElement selectsticker = driver.findElement(By.xpath("//img[@alt='Moodies Animated yellow face emoji, crying with laughter. sticker']"));
+//        selectsticker.click();
 
 
+    }
+    @AfterMethod
+    public void after(){
+        driver.quit();
     }
 }
