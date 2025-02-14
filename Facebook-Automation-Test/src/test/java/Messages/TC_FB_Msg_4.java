@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -17,16 +18,16 @@ public class TC_FB_Msg_4 {
     WebDriver driver;
 
     @BeforeMethod
-     public void  TC_FB_Msg_4(){
-         ChromeOptions chromeOptions = new ChromeOptions();
-         chromeOptions.setBrowserVersion("121");
-         driver = new ChromeDriver(chromeOptions);
-         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-         driver.manage().window().maximize();
-         driver.get("https://www.facebook.com/");
-     }
+    public void  TC_FB_Msg_4(){
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.setBrowserVersion("121");
+        driver = new ChromeDriver(chromeOptions);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        driver.manage().window().maximize();
+        driver.get("https://www.facebook.com/");
+    }
 
-     @Test
+    @Test
     public void TC_FB_Msg_4Test() throws InterruptedException, AWTException {
         WebElement username = driver.findElement(By.id("email"));
         username.sendKeys("patali9600@gmail.com");
@@ -97,6 +98,9 @@ public class TC_FB_Msg_4 {
         WebElement Send2 = driver.findElement(By.xpath("//div[@aria-label='Press Enter to send']//*[name()='svg']"));
         Send2.click();
 
-
+}
+    @AfterMethod
+    public void after(){
+        driver.quit();
     }
 }
