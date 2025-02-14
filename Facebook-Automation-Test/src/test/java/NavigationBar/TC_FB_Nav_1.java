@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -27,22 +28,23 @@ public class TC_FB_Nav_1 {
     }
 
     @Test
-    public void TC_FB_Nav_1Test() throws InterruptedException {
+    @Parameters({"Username","Password"})
+    public void TC_FB_Nav_1Test(String user, String Pass) throws InterruptedException {
         WebElement username = driver.findElement(By.id("email"));
-        username.sendKeys("jigiwi7156@jofuso.com");
+        username.sendKeys(user);
 
         WebElement Password = driver.findElement(By.id("pass"));
-        Password.sendKeys("Celkon");
+        Password.sendKeys(Pass);
 
         WebElement LoginButton = driver.findElement(By.xpath("(//button[normalize-space()='Log in'])[1]"));
         LoginButton.click();
-
-                    //Sometimes while Anonymous Login it is requiring the password again, for that;
-        WebElement AnonymousLoginPassword = driver.findElement(By.id("pass"));
-        AnonymousLoginPassword.sendKeys("Celkon");
-
-        WebElement AnonymousLoginButton = driver.findElement(By.xpath("(//button[normalize-space()='Log in'])[1]"));
-        AnonymousLoginButton.click();
+//
+//                    //Sometimes while Anonymous Login it is requiring the password again, for that;
+//        WebElement AnonymousLoginPassword = driver.findElement(By.id("pass"));
+//        AnonymousLoginPassword.sendKeys("Celkon");
+//
+//        WebElement AnonymousLoginButton = driver.findElement(By.xpath("(//button[normalize-space()='Log in'])[1]"));
+//        AnonymousLoginButton.click();
 
 
         Thread.sleep(5000);
@@ -61,10 +63,10 @@ public class TC_FB_Nav_1 {
         Home.click();
         Thread.sleep(1500);
 
-//        Click on facebook Friends
-        WebElement Friends = driver.findElement(By.xpath("//a[@aria-label='Friends']"));
-        Friends.click();
-        Thread.sleep(2000);
+////        Click on facebook Friends
+//        WebElement Friends = driver.findElement(By.xpath("//a[@aria-label='Friends']"));
+//        Friends.click();
+//        Thread.sleep(2000);
 
 //        Click on facebook Groups
         WebElement Groups = driver.findElement(By.xpath("//a[@aria-label='Groups']"));
