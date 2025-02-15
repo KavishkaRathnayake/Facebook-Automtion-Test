@@ -5,7 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -24,13 +26,13 @@ public class TC_FB_Settings_1 {
     }
 
     @Test
-    public void TC_FB_Settings_1Test() throws InterruptedException {
-        //Login to facebook
+    @Parameters({"Username","Password"})
+    public void TC_FB_Reels_1Test(String user, String Pass) throws InterruptedException {
         WebElement username = driver.findElement(By.id("email"));
-        username.sendKeys("jegoh94617@konican.com");
+        username.sendKeys(user);
 
         WebElement Password = driver.findElement(By.id("pass"));
-        Password.sendKeys("celkon");
+        Password.sendKeys(Pass);
 
         WebElement LoginButton = driver.findElement(By.xpath("(//button[normalize-space()='Log in'])[1]"));
         LoginButton.click();
@@ -44,5 +46,9 @@ public class TC_FB_Settings_1 {
         Settings.click();
 
         driver.navigate().back();
+    }
+    @AfterMethod
+    public void after(){
+        driver.quit();
     }
 }
